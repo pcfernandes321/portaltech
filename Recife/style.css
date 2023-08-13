@@ -17,3 +17,15 @@ main {
 img {
     border: 5px solid black;
 }
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
