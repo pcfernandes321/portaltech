@@ -1,0 +1,19 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: rgb(119, 204, 233);
+}
+
+.titulo {
+    color: rgb(9, 30, 121);
+}
+
+main {
+    color: rgb(9, 30, 121);
+}
+
+img {
+    border: 5px solid black;
+}
