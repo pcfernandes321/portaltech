@@ -40,4 +40,4 @@ create table aluno {
     endereco varchar (60),
     telefone varchar (15),
     primary key (id),
-}
+};
