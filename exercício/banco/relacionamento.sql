@@ -17,6 +17,12 @@ CREATE TABLE emprestimos (
     livro_id INT REFERENCES livros(id)
 );
 
+CREATE TABLE Lembretes (
+    lembrete_id SERIAL PRIMARY KEY,
+    descricao TEXT,
+    data_lembrete DATE
+);
+
 
 INSERT INTO livros (titulo, autor, ano_publicacao) VALUES
     ('SQL', 'JOÃO', 2023),
@@ -32,5 +38,20 @@ SELECT * FROM livros;
 
 select * FROM emprestimos;
 
+SELECT livros.titulo, emprestimos.data_emprestimo, emprestimos.data_devolucao
+FROM livros
+INNER JOIN emprestimos ON livros.id = emprestimos.livro_id;
 
 
+CREATE OR REPLACE FUNCTION adicionar_lembrete_emprestimo() RETURNS TRIGGER AS $$
+BEGIN
+    INSERT INTO Lembretes (descricao, data_lembrete)
+    VALUES (
+        'Devolver o livro "' || (SELECT titulo FROM Livros WHERE livro_id = NEW.livro_id) || '" em ' || NEW.data_devolucao,
+        NEW.data_devolucao
+    );
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+select * from lembretes 
