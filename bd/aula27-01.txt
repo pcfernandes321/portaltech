@@ -1,0 +1,14 @@
+CREATE table artista (
+  id SERIAL PRIMARY KEY,
+  nome VARCHAR(20) UNIQUE
+);
+
+CREATE table musica (
+  id SERIAL PRIMARY KEY,
+  nome VARCHAR(30) NOT NULL
+);
+
+create TABLE gravacao (
+  id SERIAL PRIMARY KEY,
+  duracao_seg INT NOT NULL
+);
