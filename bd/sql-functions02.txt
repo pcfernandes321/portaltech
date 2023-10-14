@@ -1,0 +1,10 @@
+CREATE TABLE produto (
+  id SERIAL PRIMARY KEY,
+  nome VARCHAR(16) NOT NULL UNIQUE,
+  preco FLOAT NOT NULL
+);
+
+INSERT INTO produto (nome, preco) VALUES
+  ('Bicicleta', 789.90),
+  ('Patins', 234.50),
+  ('Scooter', 450.00);
